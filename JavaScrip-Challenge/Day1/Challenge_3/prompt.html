@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 정보 입력 받고 출력하기</title>
+    <style>
+        body{
+            padding-top: 20%;
+            padding-left: 20%;
+        }
+        p{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 id="name"></h1>
+    <p id="pet"></p>
+    <p id="fruit"></p>
+    <p id="wish"></p>
+    <p id="goal"></p>
+
+    <script>
+        const nameElement = document.querySelector("#name")
+        let name = prompt("이름이 어떻게 되시나요?")
+        nameElement.textContent = `제 이름은 ${name} 입니다.`
+
+        document.querySelector("#pet")
+        .textContent = `저는 ${prompt("좋아하는 동물 있으세요?")} 좋아합니다.`
+
+        document.querySelector("#fruit")
+        .textContent = `저는 ${prompt("좋아하는 과일은 무엇인가요?")} 좋아합니다.`
+
+        document.querySelector("#wish")
+        .textContent = `저는 "${prompt("가장 이루어졌음 하는 소망은 무엇인가요?")}" 을(를) 가장 소망합니다.`
+
+        document.querySelector("#goal")
+        .textContent = `제 2024 목표는 ${prompt("2024년에 달성하고자 하는 목표는 무엇인가요?")} 입니다.`
+    </script>
+</body>
+</html>
