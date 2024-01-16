@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다크모드</title>
+    <style>
+        .dark-mode{
+            background-color: black;
+        }
+        .light-mode{
+            background-color: white;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            margin-top: 50px;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="darkMode('dark-btn')">Dark Mode</button>
+    <button onclick="darkMode('light-btn')">Light Mode</button>
+
+    <script>
+        function darkMode(buttonId){
+            var body = document.body;
+            var darkBtn = document.getElementById("dark-btn");
+            var lightBtn = document.getElementById("light-btn");
+
+            if (buttonId === 'dark-btn'){
+                body.classList.add('dark-mode')
+                body.classList.remove('light-mode')
+                body.classList.add('dark-mode')
+                body.classList.remove('light-mode')
+
+            }else if(buttonId === 'light-btn'){
+                body.classList.remove('dark-mode')
+                body.classList.add('light-mode')
+                body.classList.remove('dark-mode')
+                body.classList.add('light-mode')
+            }
+        };
+    </script>
+</body>
+</html>
