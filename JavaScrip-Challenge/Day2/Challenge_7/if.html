@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if문 활용</title>
+    <style>
+        p{
+            font-size: 30px;
+        }
+        table{
+            text-align: center;
+            border-spacing: 0;
+            margin: 60px 0;
+            font-size: 25px;
+        }
+        th, td{
+            padding: 40px;
+            border: 1px solid rgb(241, 241, 240);
+        }
+        th, .score > td{
+            background-color: rgb(235, 252, 235);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>다음 조건에 맞게 코드를 작성해 주세요.</h1>
+
+    <p>조건 : </p>
+    <p>1. 입력창을 띄어 사용자의 0 ~ 100점의 점수를 받는다.</p>
+    <p>2. 입력 받은 점수에 맞는 성적의 등급을 나눈다.</p>
+    <table>
+        <tr class="score">
+            <th>점수</th>
+            <td>90 이상</td>
+            <td>80 ~ 89점</td>
+            <td>70 ~ 79점</td>
+            <td>60 ~ 69점</td>
+            <td>60점 미만</td>
+        </tr>
+        <tr class="grade">
+            <th>등급</th>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+            <td>F</td>
+        </tr>
+    </table>
+    <p>3. 나의 기말고사 점수는 ______점, 학점은 ______!!!</p>
+    <hr>
+
+    <p class="result"></p>
+
+    <script>
+        const p = document.querySelector(".result")
+        const score = parseInt(prompt("귀하의 시험 점수를 입력하세요."))
+
+        if(score >= 90){
+            p.textContent = `귀하의 시험 점수는 ${score}점이고, 학점은 A 입니다.`
+        }else if(score >= 80 && score <= 89){
+            p.textContent = `귀하의 시험 점수는 ${score}점이고, 학점은 B 입니다.`
+        }else if(score >= 70 && score <= 79){
+            p.textContent = `귀하의 시험 점수는 ${score}점이고, 학점은 C 입니다.`
+        }else if(score >= 60 && score <= 69){
+            p.textContent = `귀하의 시험 점수는 ${score}점이고, 학점은 D 입니다.`
+        }else{
+            p.textContent = `귀하의 시험 점수는 ${score}점이고, 학점은 F 입니다.`
+        }
+    </script>
+</body>
+</html>

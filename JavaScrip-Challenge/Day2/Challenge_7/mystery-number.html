@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미스테리 숫자 맞추기</title>
+    <link href="mystery-number-etc/mystery-number.css" rel="stylesheet">
+</head>
+
+
+<!-- body -->
+<body>
+
+    <div>
+        <h1>Mystery</h1>
+        <h1>Number</h1>
+        <p>1 ~ 100 사이의 숫자를 입력하세요!</p>
+
+        <input id="input" type="number">
+        <button id="button" type="button">입 력</button>
+        
+        <p id="hint"></p>
+        <button id="restart">다시 하기</button>
+    </div>
+
+
+    <!-- 스크립트 -->
+    <script>
+        const inputNum = document.getElementById("input");
+        const button = document.getElementById("button");
+        const hint = document.getElementById("hint");
+        const restartBtn = document.getElementById("restart")
+
+        let randomNumber;
+
+        // 랜덤 번호
+        function randomNum(){
+            randomNumber = Math.floor(Math.random() * 100) + 1;
+            console.log(randomNumber)  
+        }
+        randomNum();
+
+        // 뚜둥! 버큰 클릭 이벤트
+        button.addEventListener("click", function(){
+            let inputNumValue = inputNum.value;
+
+            if(inputNumValue < 1 || inputNumValue > 100){
+                hint.textContent = "1부터 100 사이의 숫자를 입력해 주세요.";
+                return;
+            }
+
+            if(inputNumValue < randomNumber){
+                hint.textContent = "숫자가 작아요! 더 높여 보세요! 👆";
+            }else if(inputNumValue > randomNumber){
+                hint.textContent = "숫자가 커요! 더 줄여 보세요! 👇";
+            }else{
+                hint.textContent = "와! 축하드려요! 정답입니다! 🎉";
+                restartBtn.style.visibility = "visible";
+                button.disabled = true;
+            }
+        })
+
+        restartBtn.style.visibility = "hidden";
+
+        // 게임 다시 하기
+        function restart(){
+            randomNum();
+            input.value = "";
+            hint.innerHTML = "";
+            button.disabled = false;
+            restartBtn.style.visibility = "hidden";
+        }
+
+        restartBtn.addEventListener("click", function(){
+            restart();
+        })
+        
+    </script>
+
+</body>
+</html>
