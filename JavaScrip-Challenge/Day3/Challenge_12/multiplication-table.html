@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <style>
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+            border-spacing: 0;
+            text-align: center;
+        }
+        th{
+            padding: 10px;
+            border: 1px solid black;
+        }
+        td{
+            padding: 10px;
+            border-right: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        document.write("구구단 만들기")
+
+        document.write("<table>");
+            document.write("<tr>");
+                // 2단 ~ 9단 반복
+                for(let i = 2; i <= 9; i++){
+                    document.write("<th>" + i + "단</th>");
+                }
+            document.write("</tr>");
+            document.write("<tr>");
+                // 2 ~ 9단 1 ~ 9 곱셈 출력
+                for(let j = 1; j <= 9; j++){
+                    for(i = 2; i <= 9; i++){
+                        document.write("<td>" + i + "x" + j + "=" + i * j + "</td>");
+                    }
+                    document.write("</tr>")
+                }
+        document.write("</table>")
+    </script>    
+</body>
+</html>

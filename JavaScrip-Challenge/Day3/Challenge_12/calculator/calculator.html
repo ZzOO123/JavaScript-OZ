@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <link href="calculator.css" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Calculator</h1>
+    <div id="calculator-wrap">
+        <div id="result-display">
+            <input type="text" class="input" readonly>
+        </div>
+        <div id="keyPad">
+            <div class="buttons">
+                <button id="num_7">7</button>
+                <button id="num_8">8</button>
+                <button id="num_9">9</button>
+                <button id="add" class="operator">+</button>
+            </div>
+            <div class="buttons">
+                <button id="num_4">4</button>
+                <button id="num_5">5</button>
+                <button id="num_6">6</button>
+                <button id="subtract" class="operator">-</button>
+            </div>
+            <div class="buttons">
+                <button id="num_1">1</button>
+                <button id="num_2">2</button>
+                <button id="num_3">3</button>
+                <button id="multiply" class="operator">x</button>
+            </div>
+            <div class="buttons">
+                <button id="clear">C</button>
+                <button id="num_0">0</button>
+                <button id="result">=</button>
+                <button id="divide" class="operator rightBottom">÷</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="calculator.js"></script>
+</body>
+</html>

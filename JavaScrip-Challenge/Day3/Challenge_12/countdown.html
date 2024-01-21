@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운트다운</title>
+</head>
+<body>
+
+    <h1 id="now"></h1>
+    <h1 id="d_day"></h1>
+
+    <script>
+        // 현재 시간
+        function nowTime(){
+            const now = new Date();
+
+            document.getElementById("now").innerHTML = "현재시간 : " + now;
+        }
+        nowTime();
+        setInterval(nowTime, 1000);
+    
+        // 해당 날짜까지 남은 시간
+        function newDay(){
+            const newYear = new Date("2025-01-01");
+            const today = new Date();
+
+            const dDay = newYear - today;
+
+            const day = Math.floor(dDay / (1000 * 60 * 60 * 24));
+            const hour = Math.floor((dDay / (1000 * 60 * 60)) % 24);
+            const min = Math.floor((dDay / (1000 * 60)) % 60);
+            const sec = Math.floor(dDay / 1000 % 60);
+            
+            document.getElementById("d_day").innerHTML = "2025년까지 남은 시간 : " + day + "일 / " + hour + "시간 / " + min + "분 / " + sec + "초";
+        }
+        newDay();
+        setInterval(newDay, 1000);
+    </script>
+</body>
+</html>
