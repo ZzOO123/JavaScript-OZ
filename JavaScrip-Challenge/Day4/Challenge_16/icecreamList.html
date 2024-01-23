@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이스크림 추가 및 나열</title>
+    <style>
+        body{
+            margin: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 100px;
+        }
+        button{
+            margin-bottom: 50px;
+        }
+        p{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button">
+            <button id="add">아이스크림 종류 추가</button>
+            <button id="name">아이스크림 이름 출력</button>
+            <button id="list">입력한 아이스크림 목록 출력</button>
+            
+            <h1>입력한 아이스크림 목록 :</h1>
+            <p id="text"></p>
+        </div>
+    </div>
+
+    <script>
+        const add = document.getElementById("add");
+        const name = document.getElementById("name");
+        const list = document.getElementById("list");
+        const text = document.getElementById("text");
+
+        let ice = [];
+        add.addEventListener('click', function(){
+            let add_ice = prompt('추가하고 싶은 아이스크림을 입력해 주세요.');
+            ice.push(add_ice);
+            // console.log(ice)
+        });
+
+        name.addEventListener('click', function(){
+            for(let i = 0; i < ice.length; i++){
+                alert(ice[i]);
+            }
+        });
+
+        list.addEventListener('click', function(){
+            text.textContent = `${ice.join(', ')}`;
+        });
+    </script>
+</body>
+</html>

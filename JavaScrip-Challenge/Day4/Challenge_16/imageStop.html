@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 멈춰!</title>
+    <style>
+        body{
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+        #container{
+            width: 100%;
+            height: 100%;
+        }
+        #image{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div id="image"></div>
+        <button type="button" id="stop">STOP</button>
+    </div>
+
+    <script>
+        const stopBtn = document.getElementById("stop");
+        const startBtn = document.getElementById("start");
+        const img = document.getElementById("image");
+        const img_count = 11;
+
+        let change_img = setInterval(function(){
+
+            // 중복 제거 인덱스
+            let randomIndex = [];
+            let random = Math.floor(Math.random() * img_count) + 1;
+
+            if(randomIndex.indexOf(random) === -1){
+                randomIndex.push(random);
+            } 
+
+            const image = new Image();
+            image.src = `images/trolls${random}.jpeg`;
+            img.style.backgroundImage = `url(${image.src})`;
+            img.style.backgroundSize = `100% 100%`;
+            
+        }, 900);
+
+        stopBtn.addEventListener('click', function(){
+            clearInterval(change_img);
+        });
+    </script>
+</body>
+</html>
